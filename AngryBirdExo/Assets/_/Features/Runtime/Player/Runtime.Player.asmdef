@@ -2,8 +2,7 @@
     "name": "Runtime.Player",
     "rootNamespace": "Runtime.Player",
     "references": [
-        "Unity.InputSystem",
-        "Runtime.Obstacle"
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

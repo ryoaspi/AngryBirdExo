@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,19 +15,28 @@ namespace Runtime.Player
             DebugInfo();
         }
 
+        private void Update()
+        {
+            IsKinematics(_playerLife);
+        }
 
         #endregion
         
         
         #region Utils
         
-        public void OnMove(InputAction.CallbackContext context)
+        public void OnJumping(InputAction.CallbackContext context)
         {
             context.ReadValueAsButton();
             if (context.started && _playerLife.IAmAlive()== true)
             {
-                _rb.AddRelativeForceY(_jumping);
+                _rb.linearVelocityY = _rb.linearVelocity.y + _jumping;
             }
+        }
+
+        public void IsKinematics(PlayerLife playerLife)
+        {
+            _rb.simulated = _playerLife.IAmAlive();
         }
         
         #endregion

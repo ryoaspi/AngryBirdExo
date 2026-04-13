@@ -1,3 +1,16 @@
 {
-	"name": "Runtime.Obstacle"
+    "name": "Runtime.Obstacle",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3047ed971a14cb44fa505c449bb051b6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
