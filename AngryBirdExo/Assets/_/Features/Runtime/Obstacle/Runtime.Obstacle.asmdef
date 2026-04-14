@@ -2,7 +2,8 @@
     "name": "Runtime.Obstacle",
     "rootNamespace": "",
     "references": [
-        "GUID:3047ed971a14cb44fa505c449bb051b6"
+        "GUID:3047ed971a14cb44fa505c449bb051b6",
+        "GUID:e1bdd5e9480072542bef0aae7dd80bcb"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

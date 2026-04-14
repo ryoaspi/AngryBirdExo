@@ -2,7 +2,9 @@
     "name": "Runtime.Player",
     "rootNamespace": "Runtime.Player",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Runtime.GameManager",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

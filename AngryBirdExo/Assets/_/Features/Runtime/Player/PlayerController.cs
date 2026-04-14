@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,7 +16,8 @@ namespace Runtime.Player
 
         private void Update()
         {
-            IsKinematics(_playerLife);
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, Mathf.Clamp(_rb.linearVelocity.y, -10f, 10f));
+            
         }
 
         #endregion
@@ -28,16 +28,14 @@ namespace Runtime.Player
         public void OnJumping(InputAction.CallbackContext context)
         {
             context.ReadValueAsButton();
-            if (context.started && _playerLife.IAmAlive()== true)
+            if (context.started && _playerLife.IAmAlive())
             {
-                _rb.linearVelocityY = _rb.linearVelocity.y + _jumping;
+                _rb.linearVelocity = Vector2.zero;
+                _rb.AddForce(Vector2.up * _jumping, ForceMode2D.Impulse);
             }
         }
 
-        public void IsKinematics(PlayerLife playerLife)
-        {
-            _rb.simulated = _playerLife.IAmAlive();
-        }
+
         
         #endregion
         
@@ -64,7 +62,9 @@ namespace Runtime.Player
         #region Private and Protected
         
         private InputAction _inputAction;
-        [SerializeField] private float _jumping = 0.5f;
+        [Header("Bird Settings")]
+        [Range(1f, 10f)]
+        [SerializeField] private float _jumping = 5f;
         private Rigidbody2D _rb;
         private PlayerLife _playerLife;
 

@@ -1,5 +1,4 @@
-using System;
-using Runtime.Player;
+using Runtime.GameManager;
 using UnityEngine;
 
 public class MoveObstacle : MonoBehaviour
@@ -12,6 +11,14 @@ public class MoveObstacle : MonoBehaviour
     
     
     #region Api Unity
+    
+    private void Update()
+    {
+        if (!GameManager.Instance.IsPlaying())
+            return;
+        
+        transform.Translate(Vector3.left * (m_speed * Time.deltaTime));
+    }
 
     private void OnCollisionExit2D(Collision2D other)
     {
@@ -24,18 +31,6 @@ public class MoveObstacle : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-    private void LateUpdate()
-    {
-        if (m_player.IAmAlive()) transform.Translate(Vector3.left * (m_speed * Time.deltaTime));
-    }
     
-    #endregion
-    
-    
-    #region Private and Protected
-    
-    [SerializeField] private PlayerLife m_player;
-
     #endregion
 }
