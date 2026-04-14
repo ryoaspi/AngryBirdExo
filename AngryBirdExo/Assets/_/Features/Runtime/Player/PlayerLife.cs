@@ -10,16 +10,19 @@ namespace Runtime.Player
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _score = GetComponent<Score>();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer(_layerMasks))
             {
-                _isLife = false;
+                _isAlive = false;
+                gameObject.SetActive(false);
                 UpdatePhysicsState();
-
-                GameManager.GameManager.Instance.SetGameOver();
+                
+                Debug.Log(_score.m_currentScore);
+                GameManager.GameManager.Instance.SetGameOver(_score.m_currentScore);
             }
         }
 
@@ -30,7 +33,7 @@ namespace Runtime.Player
 
         public bool IAmAlive()
         {
-            return _isLife;
+            return _isAlive;
         }
         public void UpdatePhysicsState()
         {
@@ -42,9 +45,10 @@ namespace Runtime.Player
         
         #region Private And Protected
         
-        private bool _isLife = true;
+        private bool _isAlive = true;
         [SerializeField] private string _layerMasks;
         private Rigidbody2D _rb;
+        private Score _score;
 
         #endregion
     }

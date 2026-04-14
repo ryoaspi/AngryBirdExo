@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Runtime.GameManager
@@ -16,6 +17,8 @@ namespace Runtime.GameManager
         
         public GameState m_currentState = GameState.Playing;
         
+        public int m_highScore;
+        
         #endregion
         
 
@@ -31,6 +34,8 @@ namespace Runtime.GameManager
             }
             
             m_gameOver.SetActive(false);
+            
+            m_highScore = PlayerPrefs.GetInt(_highScoreKey, 0);
         }
         
         #endregion
@@ -43,11 +48,33 @@ namespace Runtime.GameManager
             return m_currentState == GameState.Playing;
         }
 
-        public void SetGameOver()
+        public void SetGameOver(int finalScore)
         {
             m_currentState = GameState.GameOver;
+            TrySaveHighScore(finalScore);
+            _highScoreText.text = "Best : " + m_highScore;
+            
             m_gameOver.SetActive(true);
         }
+
+        public void TrySaveHighScore(int currentScore)
+        {
+            if (currentScore > m_highScore)
+            {
+                m_highScore = currentScore;
+                PlayerPrefs.SetInt(_highScoreKey, m_highScore);
+                PlayerPrefs.Save();
+            }
+
+        }
+        
+        #endregion
+        
+        
+        #region Private and Protected
+        
+        private const string _highScoreKey = "HighScore";
+        [SerializeField] private TMP_Text _highScoreText;
         
         #endregion
     }

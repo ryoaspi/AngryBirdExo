@@ -17,7 +17,6 @@ namespace Runtime.Player
         private void Update()
         {
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, Mathf.Clamp(_rb.linearVelocity.y, -10f, 10f));
-            
         }
 
         #endregion
@@ -34,8 +33,6 @@ namespace Runtime.Player
                 _rb.AddForce(Vector2.up * _jumping, ForceMode2D.Impulse);
             }
         }
-
-
         
         #endregion
         
