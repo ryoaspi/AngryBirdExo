@@ -56,15 +56,15 @@ public class PipeSpawner : MonoBehaviour
 
     private void InitPool()
     {
-        _pool = new ObjectPool<GameObject>(
-            CreatePipe,
-            OnGetPipe,
-            OnReleasePipe,
-            OnDestroyPipe,
-            false,
-            m_initialPoolSize,
-            m_maxPoolSize
-        );
+            _pool = new ObjectPool<GameObject>(
+                CreatePipe,
+                OnGetPipe,
+                OnReleasePipe,
+                OnDestroyPipe,
+                false,
+                m_initialPoolSize,
+                m_maxPoolSize
+            );
     }
 
     private GameObject CreatePipe()
