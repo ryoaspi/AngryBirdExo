@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8527874012218858536}
   - component: {fileID: 4003097480882751202}
+  - component: {fileID: 8057781542429330650}
   m_Layer: 8
   m_Name: Point
   m_TagString: Untagged
@@ -26,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 5041905323534709997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
-  m_LocalScale: {x: 1.4331, y: 0.75237745, z: 1.4331}
+  m_LocalPosition: {x: 0, y: -0.0056677, z: 0}
+  m_LocalScale: {x: 1.9017237, y: 0.9984049, z: 1.9017237}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3351669113834294090}
@@ -78,6 +79,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 2.8615746}
   m_EdgeRadius: 0
+--- !u!114 &8057781542429330650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5041905323534709997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da3b8ab9a6131e848a7c747e1cce994f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Runtime.GameManager::Runtime.GameManager.ScoreZone
 --- !u!1 &6003345772232144534
 GameObject:
   m_ObjectHideFlags: 0

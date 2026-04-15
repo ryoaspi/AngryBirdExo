@@ -2200,6 +2200,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1425611894462028294, guid: a8caf7935a2ca8445abf3f96369e69c5, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1697375445699165754, guid: a8caf7935a2ca8445abf3f96369e69c5, type: 3}
       propertyPath: m_Name
       value: Bird_Blue

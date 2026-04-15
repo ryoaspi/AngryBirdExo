@@ -51,6 +51,9 @@ namespace Runtime.GameManager
         public void SetGameOver(int finalScore)
         {
             m_currentState = GameState.GameOver;
+            
+            _scoreManager.gameObject.SetActive(false);
+            
             TrySaveHighScore(finalScore);
             _highScoreText.text = "Best : " + m_highScore;
             
@@ -75,6 +78,7 @@ namespace Runtime.GameManager
         
         private const string _highScoreKey = "HighScore";
         [SerializeField] private TMP_Text _highScoreText;
+        [SerializeField] private ScoreManager _scoreManager;
         
         #endregion
     }

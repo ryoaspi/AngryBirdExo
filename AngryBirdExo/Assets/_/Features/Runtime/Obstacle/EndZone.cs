@@ -10,7 +10,7 @@ public class EndZone : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer(_layer))
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
     }
 

@@ -1,3 +1,4 @@
+using Runtime.GameManager;
 using UnityEngine;
 
 namespace Runtime.Player
@@ -10,7 +11,7 @@ namespace Runtime.Player
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _score = GetComponent<Score>();
+            _score = FindFirstObjectByType<ScoreManager>();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -21,7 +22,6 @@ namespace Runtime.Player
                 gameObject.SetActive(false);
                 UpdatePhysicsState();
                 
-                Debug.Log(_score.m_currentScore);
                 GameManager.GameManager.Instance.SetGameOver(_score.m_currentScore);
             }
         }
@@ -47,8 +47,9 @@ namespace Runtime.Player
         
         private bool _isAlive = true;
         [SerializeField] private string _layerMasks;
+        [SerializeField] private string _layerPoint;
         private Rigidbody2D _rb;
-        private Score _score;
+        private ScoreManager _score;
 
         #endregion
     }

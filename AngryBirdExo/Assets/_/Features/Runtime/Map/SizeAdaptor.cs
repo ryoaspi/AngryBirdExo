@@ -4,7 +4,7 @@ public class SizeAdaptor : MonoBehaviour
 {
 
 
-    private void Update()
+    private void Awake()
     {
         float _screenWidth = Camera.main.orthographicSize * _offset * Screen.width / Screen.height;
         float _screenHeight = Camera.main.orthographicSize * _offset * Screen.height / Screen.width;
