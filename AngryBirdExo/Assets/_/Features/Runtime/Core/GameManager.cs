@@ -26,11 +26,15 @@ namespace Runtime.GameManager
         private void Awake()
         {
             if (Instance == null)
+            {
                 Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
 
             else
             {
                 Destroy(gameObject);
+                return;
             }
             
             m_gameOver.SetActive(false);
@@ -52,7 +56,7 @@ namespace Runtime.GameManager
         {
             m_currentState = GameState.GameOver;
             
-            _scoreManager.gameObject.SetActive(false);
+            _score.gameObject.SetActive(false);
             
             TrySaveHighScore(finalScore);
             _highScoreText.text = "Best : " + m_highScore;
@@ -78,7 +82,7 @@ namespace Runtime.GameManager
         
         private const string _highScoreKey = "HighScore";
         [SerializeField] private TMP_Text _highScoreText;
-        [SerializeField] private ScoreManager _scoreManager;
+        [SerializeField] private GameObject _score;
         
         #endregion
     }

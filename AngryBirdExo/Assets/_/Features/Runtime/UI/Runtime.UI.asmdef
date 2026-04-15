@@ -1,7 +1,9 @@
 {
     "name": "Runtime.UI",
     "rootNamespace": "Runtime.UI",
-    "references": [],
+    "references": [
+        "GUID:e1bdd5e9480072542bef0aae7dd80bcb"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
