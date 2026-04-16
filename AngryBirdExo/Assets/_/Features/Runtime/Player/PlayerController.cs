@@ -12,6 +12,7 @@ namespace Runtime.Player
             _rb = GetComponent<Rigidbody2D>();
             _playerLife = GetComponent<PlayerLife>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _animator = GetComponent<Animator>();
             DebugInfo();
             
         }
@@ -42,8 +43,9 @@ namespace Runtime.Player
 
             _rb.linearVelocity = Vector2.zero;
             _rb.AddForce(Vector2.up * _jumping, ForceMode2D.Impulse);
-
-            UpdateSprite();
+            
+            _animator.SetTrigger("Fly");
+            // UpdateSprite();
         }
         
         #endregion
@@ -51,34 +53,39 @@ namespace Runtime.Player
         
         #region Main Methods
         
-        private void UpdateSprite()
-        {
-            if (_sprite == null || _sprite.Length == 0)
-                return;
-
-
-            if (_spriteIndex >= _sprite.Length)
-                _spriteIndex = 0;
-
-            _spriteIndex = (_spriteIndex + 1) % _sprite.Length;
-            _spriteRenderer.sprite = _sprite[_spriteIndex];
-        }
+        // private void UpdateSprite()
+        // {
+        //     if (_sprite == null || _sprite.Length == 0)
+        //         return;
+        //
+        //
+        //     if (_spriteIndex >= _sprite.Length)
+        //         _spriteIndex = 0;
+        //
+        //     _spriteIndex = (_spriteIndex + 1) % _sprite.Length;
+        //     _spriteRenderer.sprite = _sprite[_spriteIndex];
+        // }
         
         private void DebugInfo()
         {
-            if (_rb == null)
+            if (!_rb)
             {
                 Debug.LogError($"PlayerController: Rigidbody was not found on {gameObject.name}");
             }
 
-            if (_playerLife == null)
+            if (!_playerLife)
             {
                 Debug.LogError($"PlayerController: PlayerLife was not found on {gameObject.name}");
             }
 
-            if (_spriteRenderer == null)
+            if (!_spriteRenderer)
             {
                 Debug.LogError($"PlayerController: SpriteRenderer was not found on {gameObject.name}");
+            }
+
+            if (!_animator)
+            {
+                Debug.LogError($"PlayerController: Animator was not found on {gameObject.name}");
             }
         }
 
@@ -97,6 +104,7 @@ namespace Runtime.Player
         [SerializeField] private Sprite[] _sprite;
         private int _spriteIndex;
         private SpriteRenderer _spriteRenderer;
+        private Animator _animator;
 
         #endregion
     }

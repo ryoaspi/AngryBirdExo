@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 547171594664400499}
   - component: {fileID: 2315549200560460454}
   - component: {fileID: 9221737367248036996}
+  - component: {fileID: 7890315596868922170}
   m_Layer: 0
   m_Name: Bird_Red
   m_TagString: Player
@@ -237,3 +238,25 @@ MonoBehaviour:
   - {fileID: -7293925955577659282, guid: de969a42467060e40a2a65e03d3ede0e, type: 3}
   - {fileID: 39167600, guid: de969a42467060e40a2a65e03d3ede0e, type: 3}
   - {fileID: -442875222, guid: de969a42467060e40a2a65e03d3ede0e, type: 3}
+--- !u!95 &7890315596868922170
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983722956966336930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e96976d3b1d131d4a821e17f4c8cd11f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

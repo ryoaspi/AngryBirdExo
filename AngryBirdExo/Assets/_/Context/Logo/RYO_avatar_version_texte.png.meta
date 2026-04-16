@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: dffdb26799e2489409f645fba2cb4fe5
+guid: 51179f1a6fe5be148b03243763dfd0cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4811301190039258760
-    second: Background5_0
+      213: -2454420105616332969
+    second: RYO_avatar_version_texte_0
+  - first:
+      213: -1582682600277618741
+    second: RYO_avatar_version_texte_1
+  - first:
+      213: -411442607926429092
+    second: RYO_avatar_version_texte_2
+  - first:
+      213: 900566391724806491
+    second: RYO_avatar_version_texte_3
+  - first:
+      213: 2546025623862894431
+    second: RYO_avatar_version_texte_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,13 +52,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,23 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background5_0
+      name: RYO_avatar_version_texte_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 256
-        height: 256
+        x: 300
+        y: 182
+        width: 1186
+        height: 1247
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 879bb4c1f03da3db0800000000000000
-      internalID: -4811301190039258760
+      spriteID: 75769230be520fdd0800000000000000
+      internalID: -2454420105616332969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RYO_avatar_version_texte_1
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 894
+        width: 107
+        height: 456
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfc24a7f8e290ae0800000000000000
+      internalID: -1582682600277618741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RYO_avatar_version_texte_2
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 507
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5ab515c0234a4af0800000000000000
+      internalID: -411442607926429092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RYO_avatar_version_texte_3
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 496
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b519963ac547f7c00800000000000000
+      internalID: 900566391724806491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RYO_avatar_version_texte_4
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 486
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fd363c0dc455320800000000000000
+      internalID: 2546025623862894431
       vertices: []
       indices: 
       edges: []
@@ -152,7 +252,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -161,7 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Background5_0: -4811301190039258760
+      RYO_avatar_version_texte_0: -2454420105616332969
+      RYO_avatar_version_texte_1: -1582682600277618741
+      RYO_avatar_version_texte_2: -411442607926429092
+      RYO_avatar_version_texte_3: 900566391724806491
+      RYO_avatar_version_texte_4: 2546025623862894431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
