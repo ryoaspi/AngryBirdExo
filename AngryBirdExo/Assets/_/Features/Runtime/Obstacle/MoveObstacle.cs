@@ -1,3 +1,4 @@
+using System;
 using Runtime.GameManager;
 using UnityEngine;
 
@@ -20,30 +21,14 @@ public class MoveObstacle : MonoBehaviour
         transform.Translate(Vector3.left * (m_speed * Time.deltaTime));
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("End"))
         {
-            _spawner.ReleasePipe(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
     #endregion
-
-
-    #region Utils (méthodes publics)
-
-    public void Init(PipeSpawner spawner)
-    {
-        _spawner = spawner;
-    }
-
-    #endregion
-
-
-    #region Private and Protected
-
-    private PipeSpawner _spawner;
-
-    #endregion
+    
 }

@@ -4,38 +4,29 @@ using UnityEngine.Pool;
 
 public class PipeSpawner : MonoBehaviour
 {
-    #region Publics
-
-    public GameObject m_pipePrefab;
-    public float m_spawnRate = 2f;
-    public int m_initialPoolSize = 10;
-    public int m_maxPoolSize = 20;
-
-    #endregion
-
 
     #region API Unity
 
     private void Awake()
     {
-        InitPool();
+        _pipePool = GetComponent<PipePool>();
     }
 
     private void Start()
     {
-        InvokeRepeating(nameof(SpawnPipe), 1f, m_spawnRate);
+        InvokeRepeating(nameof(SpawnPipe), 1f, _spawnRate);
     }
 
     #endregion
+    
+    
+    #region Utils
 
-
-    #region Utils (méthodes publics)
-
-    public void ReleasePipe(GameObject pipe)
+    public void StopSpawning()
     {
-        _pool.Release(pipe);
+        CancelInvoke("SpawnPipe");
     }
-
+    
     #endregion
 
 
@@ -45,50 +36,12 @@ public class PipeSpawner : MonoBehaviour
     {
         if (!GameManager.Instance.IsPlaying())
             return;
+    
+        Vector2 spawnPosition = new Vector2(_container.transform.position.x, Random.Range(-3, 3));
+        GameObject availablePipe = _pipePool.GetFirstAvailablePipe();
+        availablePipe.transform.position = spawnPosition;
+        availablePipe.SetActive(true);
 
-        float randomY = Random.Range(-2f, 2f);
-        Vector3 spawnPos = new Vector3(transform.position.x, randomY, 0);
-
-        GameObject pipe = _pool.Get();
-        pipe.transform.position = spawnPos;
-        pipe.transform.rotation = Quaternion.identity;
-    }
-
-    private void InitPool()
-    {
-            _pool = new ObjectPool<GameObject>(
-                CreatePipe,
-                OnGetPipe,
-                OnReleasePipe,
-                OnDestroyPipe,
-                false,
-                m_initialPoolSize,
-                m_maxPoolSize
-            );
-    }
-
-    private GameObject CreatePipe()
-    {
-        GameObject obj = Instantiate(m_pipePrefab, _container.transform);
-        return obj;
-    }
-
-    private void OnGetPipe(GameObject obj)
-    {
-        obj.SetActive(true);
-        
-        MoveObstacle pipe = obj.GetComponent<MoveObstacle>();
-        pipe.Init(this);
-    }
-
-    private void OnReleasePipe(GameObject obj)
-    {
-        obj.SetActive(false);
-    }
-
-    private void OnDestroyPipe(GameObject obj)
-    {
-        Destroy(obj);
     }
 
     #endregion
@@ -96,8 +49,10 @@ public class PipeSpawner : MonoBehaviour
 
     #region Private and Protected
 
-    private ObjectPool<GameObject> _pool;
+    private PipePool _pipePool;
     [SerializeField] private GameObject _container;
+    [SerializeField] private GameObject _pipePrefab;
+    [SerializeField] private float _spawnRate = 2f;
 
     #endregion
     
