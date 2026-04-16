@@ -45,7 +45,6 @@ namespace Runtime.Player
             _rb.AddForce(Vector2.up * _jumping, ForceMode2D.Impulse);
             
             _animator.SetTrigger("Fly");
-            // UpdateSprite();
         }
         
         #endregion
@@ -53,18 +52,7 @@ namespace Runtime.Player
         
         #region Main Methods
         
-        // private void UpdateSprite()
-        // {
-        //     if (_sprite == null || _sprite.Length == 0)
-        //         return;
-        //
-        //
-        //     if (_spriteIndex >= _sprite.Length)
-        //         _spriteIndex = 0;
-        //
-        //     _spriteIndex = (_spriteIndex + 1) % _sprite.Length;
-        //     _spriteRenderer.sprite = _sprite[_spriteIndex];
-        // }
+
         
         private void DebugInfo()
         {
