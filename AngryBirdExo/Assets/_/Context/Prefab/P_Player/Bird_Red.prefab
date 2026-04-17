@@ -109,8 +109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b8b949f49db9e42b2aeb8049f204f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Runtime.Player::Runtime.Player.PlayerLife
-  _layerMasks: Obstacle
-  _layerPoint: Point
+  _layerMasks:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!58 &5656425632139714808
 CircleCollider2D:
   m_ObjectHideFlags: 0

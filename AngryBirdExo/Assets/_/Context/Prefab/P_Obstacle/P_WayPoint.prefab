@@ -278,6 +278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Runtime.Obstacle::MoveObstacle
   m_speed: 1
+  _layerEnd:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!61 &8253365981642589038
 BoxCollider2D:
   m_ObjectHideFlags: 0
